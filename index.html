@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="BILAL X — مساعد ذكاء اصطناعي عربي، صممه بلال مريان" />
+  <meta name="referrer" content="no-referrer" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://api.groq.com https://generativelanguage.googleapis.com https://api.deepseek.com https://api.openai.com; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <title>BILAL X — مساعد الذكاء الاصطناعي</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🅱️</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- الشريط الجانبي -->
+    <aside id="sidebar" class="sidebar">
+      <div class="brand">
+        <span class="logo">B</span>
+        <span class="brand-name">BILAL <b>X</b></span>
+      </div>
+
+      <button id="newChatBtn" class="new-chat">＋ محادثة جديدة</button>
+
+      <div class="side-title">المحادثات</div>
+      <ul id="chatList" class="chat-list"></ul>
+
+      <div class="side-footer">
+        <button id="clearAllBtn" class="ghost">🗑️ حذف كل المحادثات</button>
+        <a class="ghost link" href="policy.html">📜 السياسة والشروط</a>
+        <div class="credit">تصميم: بلال مريان</div>
+      </div>
+    </aside>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="main">
+      <header class="topbar">
+        <button id="menuBtn" class="icon-btn mobile-only" aria-label="القائمة">☰</button>
+        <div class="spacer"></div>
+        <button id="themeBtn" class="icon-btn" aria-label="تبديل الوضع">🌓</button>
+      </header>
+
+      <section id="welcome" class="welcome">
+        <div class="hero-logo">B</div>
+        <h1>مرحباً بك في <span class="accent">BILAL X</span></h1>
+        <p class="sub">اسألني أي شيء، سأكون هنا لمساعدتك.</p>
+        <div class="chips">
+          <button class="chip" data-prompt="أعطني أفكاراً لمشروع برمجي ممتع للمبتدئين">💡 أعطني أفكاراً</button>
+          <button class="chip" data-prompt="ساعدني في البرمجة: اشرح لي مفهوم الدوال في JavaScript مع مثال">💻 ساعدني في البرمجة</button>
+          <button class="chip" data-prompt="لخّص لي أهم فوائد القراءة اليومية في نقاط قصيرة">📝 لخّص لي النص</button>
+          <button class="chip" data-prompt="اكتب لي قصة قصيرة عن شاب يبرمج تطبيقاً يغيّر حياة جيرانه">✍️ اكتب محتوى إبداعي</button>
+        </div>
+      </section>
+
+      <section id="messages" class="messages" aria-live="polite"></section>
+
+      <form id="composer" class="composer" autocomplete="off">
+        <textarea id="input" rows="1" placeholder="اكتب رسالتك هنا..." aria-label="رسالتك"></textarea>
+        <button id="sendBtn" class="send" type="submit" aria-label="إرسال">➤</button>
+      </form>
+      <p class="disclaimer">قد يخطئ BILAL X أحياناً. تحقّق من المعلومات المهمة.</p>
+    </main>
+  </div>
+
+  <!-- بوابة الشروط وسياسة الخصوصية -->
+  <div id="termsModal" class="modal" hidden>
+    <div class="modal-box">
+      <h2>مرحباً بك في BILAL X</h2>
+      <p>قبل البدء، يرجى قراءة سياسة الخصوصية وشروط الاستخدام الكاملة.</p>
+      <ul class="summary">
+        <li>المحادثات تُحفظ على جهازك فقط ولا نرفعها إلى أي خادم خاص بنا.</li>
+        <li>لا نستخدم أي أدوات تتبع أو إعلانات.</li>
+        <li>الرسائل تُرسل إلى مزودي الذكاء الاصطناعي لمعالجتها وفق سياساتهم.</li>
+        <li>لا تشارك معلومات شخصية حساسة (كلمات مرور، أرقام بنكية، هوية).</li>
+        <li>الاستخدام مسؤوليتك، ولا تستخدم الموقع لأي غرض غير قانوني أو ضار.</li>
+      </ul>
+      <a href="policy.html" target="_blank" rel="noopener">اقرأ النص الكامل ←</a>
+      <label class="check">
+        <input id="termsCheck" type="checkbox" />
+        <span>قرأت وأوافق على سياسة الخصوصية وشروط الاستخدام</span>
+      </label>
+      <button id="acceptTerms" class="primary" disabled>متابعة</button>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
