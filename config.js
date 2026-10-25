@@ -21,7 +21,7 @@ window.BILAL_CONFIG = {
   proxy: "https://bilal-x.c9824139.workers.dev",
 
   // 🔑 مفاتيح Groq (24 مفتاح) — ضعها داخل المصفوفة بين علامتي التنصيص
-  groq: placeholder("GROQ", 24),
+  groq: placeholder("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", 24),
 
   // 🔑 مفاتيح OpenAI / ChatGPT (10 مفاتيح)
   openai: placeholder("OPENAI", 10),
