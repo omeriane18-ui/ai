@@ -18,7 +18,7 @@ const placeholder = (name, n) =>
 window.BILAL_CONFIG = {
   // اختياري: إذا وضعت رابط وكيل (Cloudflare Worker) سيتم استخدامه بدلاً من المفاتيح
   // مثال: proxy: "https://bilal-x.your-name.workers.dev",
-  proxy: "",
+  proxy: "https://bilal-x.c9824139.workers.dev",
 
   // 🔑 مفاتيح Groq (24 مفتاح) — ضعها داخل المصفوفة بين علامتي التنصيص
   groq: placeholder("GROQ", 24),
